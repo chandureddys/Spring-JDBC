@@ -7,6 +7,7 @@ import javax.swing.tree.RowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.spring.springjdbc.employee.dao.Employeedao;
+import com.spring.springjdbc.employee.dao.RowmapperImpl;
 import com.spring.springjdbc.employee.dto.Employee;
 
 public class EmployeedaoImpl implements Employeedao {
@@ -44,7 +45,10 @@ public class EmployeedaoImpl implements Employeedao {
 	@Override
 	public Employee read(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		String sql = "select *  from  employee where id=?";
+		RowmapperImpl employeerwo = new RowmapperImpl();
+		Employee employee = jdbcTemplate.queryForObject(sql, employeerwo,id);
+		return  employee;
 	}
 	public JdbcTemplate getJdbcTemplate() {
 		return jdbcTemplate;

@@ -19,10 +19,11 @@ public class Test {
 		employee.setFirstName("bhaskar");
 		employee.setLastName("reddy");
 		
-	int result = dap.create(employee);
+	//int result = dap.create(employee);
 		//int result = dap.update(employee);
 		//int result = dap.delete(employee);
-	System.out.println(result);
+	Employee emp = (Employee) dap.read(2);
+	System.out.println(emp);
 		
 		
 	}
