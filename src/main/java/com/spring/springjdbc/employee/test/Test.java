@@ -15,11 +15,13 @@ public class Test {
 		
 		Employeedao dap = (Employeedao) context.getBean("employeedaoImpl");
 		Employee employee = new Employee();
-		employee.setId(2);
-		employee.setFirstName("sekhar");
-		employee.setLastName("Reddy");
+		employee.setId(4);
+		employee.setFirstName("bhaskar");
+		employee.setLastName("reddy");
 		
 	int result = dap.create(employee);
+		//int result = dap.update(employee);
+		//int result = dap.delete(employee);
 	System.out.println(result);
 		
 		
